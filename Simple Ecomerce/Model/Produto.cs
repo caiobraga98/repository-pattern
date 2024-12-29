@@ -12,5 +12,7 @@ namespace Simple_Ecomerce.Model
         public string descricao { get; set; }
 
         public double preco { get; set; }
+
+        public Categoria Categoria { get; set; }
     }
 }

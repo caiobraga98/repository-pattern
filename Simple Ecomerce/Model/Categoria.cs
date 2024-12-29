@@ -11,6 +11,6 @@ namespace Simple_Ecomerce.Model
 
         public string Descricao { get; set; }
 
-        public List<Produto> Produtos { get; set; }
+        public ICollection<Produto> Produtos { get; set; }
     }
 }

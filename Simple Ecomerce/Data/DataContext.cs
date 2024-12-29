@@ -12,5 +12,15 @@ namespace Simple_Ecomerce.Data
         //DbSet representa uma coleção de entidades que serão mapeadas para o banco de dados.
         public DbSet<Produto> Produtos { get; set; }
         public DbSet<Categoria> Categorias { get; set; }
+
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Produto>()
+                .HasOne(p => p.Categoria)
+                .WithMany(c => c.Produtos)
+                .HasForeignKey(p => p.id);
+        }
+
     }
 }
